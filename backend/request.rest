@@ -1,0 +1,68 @@
+//create user
+
+POST http://localhost:5000/users
+Content-type: application/json
+
+{
+    "name":"kuldeep",
+    "email":"kuldeep@gmail.com",
+    "password":"kuldeep123",
+    "confPassword":"kuldeep123"
+}
+###
+//get all  user
+GET  http://localhost:5000/users
+
+###
+//get single user
+GET http://localhost:5000/users/9e871283-e7fc-4948-a927-f2344579260d
+
+###
+PATCH  http://localhost:5000/users/9e871283-e7fc-4948-a927-f2344579260d
+Content-type: application/json
+
+{
+    "name":"Kuldeep Kushwaha",
+    "email":"kuldeep@gmail.com",
+    "password":"kuldeep123",
+    "confPassword":"kuldeep123"
+}
+
+###
+DELETE   http://localhost:5000/users/9e871283-e7fc-4948-a927-f2344579260d
+
+###
+// login 
+
+POST http://localhost:5000/login
+Content-type: application/json
+
+{
+    "email":"kuldeep@gmail.com",
+    "password":"kuldeep123"
+}
+
+###
+GET http://localhost:5000/me
+###
+DELETE  http://localhost:5000/logout
+
+
+###
+//add gps data
+POST http://localhost:5000/addGpsData
+Content-type: application/json
+
+{
+    "DeviceId":"D-1571",
+    "DeviceType":"Asset",
+    "Timestamp":"31-08-2022 10:35",
+    "location":"L6"
+}
+###
+//Get gps Data
+GET  http://localhost:5000/getGpsData
+
+####
+//Get gps data by device id
+GET  http://localhost:5000/getGpsDataById/D-1567
